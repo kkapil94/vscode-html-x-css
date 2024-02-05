@@ -1,0 +1,89 @@
+{
+  "name": "vscode-html-x-css",
+  "displayName": "vscode html to css",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "html",
+    "css",
+    "html to css",
+    "html2css",
+    "html to css vscode",
+    "html2css vscode",
+    "html to css extension",
+    "html2css extension",
+    "html to css generator",
+    "html2css generator",
+    "html to css generator vscode",
+    "html2css generator vscode",
+    "html to css generator extension",
+    "html2css generator"
+  ],
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "icon": "images/code.png",
+  "galleryBanner": {
+    "color": "#423B55",
+    "theme": "dark"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vs-html-x-css.generate",
+        "title": "HTML to CSS : Generate"
+      }
+    ],
+    "keybindings": {
+      "command": "vs-html-x-css.generate",
+      "key": "alt+x",
+      "when": "editorHasSelection"
+    },
+    "configuration": {
+      "type": "object",
+      "title": "VS HTML to CSS",
+      "properties": {
+        "vscode-html-x-css.append": {
+          "default": " {\n}\n",
+          "description": "Character(s) to be added after the classes CSS (including blank spaces)"
+        },
+        "vscode-html-x-css.disableNotification": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable notification"
+        },
+        "vscode-html-x-css.ignore": {
+          "type": "array",
+          "default": [
+            "container",
+            "row"
+          ],
+          "description": "Lists of classes CSS to ignore"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.86.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "collect.js": "^4.36.1"
+  }
+}
